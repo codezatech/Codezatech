@@ -3,247 +3,564 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO -->
     <title>CodezaTech | Code. Innovate. Elevate.</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="description" content="CodezaTech is a UI/UX design and web development agency delivering compliant, high-performance digital solutions — from concept to deployment.">
+    <meta name="keywords" content="CodezaTech, web development, UI UX design, mobile app design, graphic design, AI solutions, cloud setup, Figma, React, Next.js">
+    <meta name="author" content="CodezaTech">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.codezatech.com/">
+
+    <!-- Open Graph (WhatsApp, Facebook, LinkedIn previews) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="CodezaTech | Code. Innovate. Elevate.">
+    <meta property="og:description" content="We engineer digital ecosystems — UI/UX design, full-stack development, AI solutions, and more. Built for scale, speed, and compliance.">
+    <meta property="og:image" content="logs.png">
+    <meta property="og:url" content="https://www.codezatech.com/">
+    <meta property="og:site_name" content="CodezaTech">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CodezaTech | Code. Innovate. Elevate.">
+    <meta name="twitter:description" content="Crafting modern digital platforms through precision UI/UX design, robust engineering, and continuous innovation.">
+    <meta name="twitter:image" content="logs.png">
+
+    <!-- Favicon & App Icons (the logo that shows in browser tab & Google search) -->
+    <link rel="icon" type="image/png" href="abcd.png">
+    <link rel="apple-touch-icon" href="abcd.png">
+    <link rel="shortcut icon" href="abcd.png">
+
+    <!-- Theme color (browser bar color on mobile) -->
+    <meta name="theme-color" content="#0a0a0f">
+
+    <!-- Schema.org Structured Data (Google rich results) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CodezaTech",
+      "url": "https://www.codezatech.com",
+      "logo": "https://www.codezatech.com/abcd.png",
+      "description": "UI/UX design and web development agency delivering compliant, high-performance digital solutions.",
+      "email": "support@codezatech.com",
+      "sameAs": [],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="logs.png" alt="CodezaTech Logo" class="me-2" onerror="this.style.display='none'">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center gap-3">
-                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+<!-- Particle Canvas Background -->
+<canvas id="particleCanvas"></canvas>
+
+<!-- Cursor Glow -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- Loader -->
+<div class="loader-screen" id="loaderScreen">
+    <div class="loader-inner">
+        <div class="loader-logo">
+         <img src="abcd.png" alt="CodezaTech" onerror="this.style.display='none'">
+         </div>
+        <div class="loader-bar"><div class="loader-fill"></div></div>
+        <p class="loader-text">Initializing Experience</p>
+    </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a class="nav-brand" href="#">
+            <img src="logs.png" alt="CodezaTech" onerror="this.style.display='none'">
+          
+        </a>
+        <button class="nav-toggle" id="navToggle">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="#contact" class="btn-nav">Let's Talk <i class="fas fa-arrow-right"></i></a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-left">
+                <div class="hero-badge reveal-up" style="--delay:0.1s">
+                    <span class="badge-dot"></span>
+                    <span>Code &nbsp;·&nbsp; Innovate &nbsp;·&nbsp; Elevate</span>
+                </div>
+                <h1 class="hero-title reveal-up" style="--delay:0.2s">
+                    We Transform
+                    <span class="word-gradient">Ideas</span> Into
+                    <span class="word-gradient">Digital</span> Realities
+                </h1>
+                <p class="hero-desc reveal-up" style="--delay:0.35s">Crafting modern digital platforms through precision UI/UX design, robust engineering pipelines, and continuous ecosystem innovation.</p>
+                <div class="hero-cta reveal-up" style="--delay:0.5s">
+                    <a href="#contact" class="btn-primary">Start a Project <i class="fas fa-rocket ms2"></i></a>
+                    <a href="#services" class="btn-ghost">Explore Services <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+            </div>
+            <div class="hero-right reveal-right" style="--delay:0.3s">
+                <div class="hero-img-scene">
+                    <div class="hiss-glow"></div>
+                    <img src="Frame.png" alt="CodezaTech Platform" class="his-imgs">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-cue">
+        <div class="scroll-cue-inner"></div>
+    </div>
+</section>
+
+<!-- Marquee Strip -->
+<div class="marquee-strip">
+    <div class="marquee-track">
+        <span>Web Development</span><span class="dot">◆</span>
+        <span>UI/UX Design</span><span class="dot">◆</span>
+        <span>AI Solutions</span><span class="dot">◆</span>
+        <span>Cloud Setup</span><span class="dot">◆</span>
+        <span>Graphic Design</span><span class="dot">◆</span>
+        <span>Support & Maintenance</span><span class="dot">◆</span>
+        <span>Web Development</span><span class="dot">◆</span>
+        <span>UI/UX Design</span><span class="dot">◆</span>
+        <span>AI Solutions</span><span class="dot">◆</span>
+        <span>Cloud Setup</span><span class="dot">◆</span>
+        <span>Graphic Design</span><span class="dot">◆</span>
+        <span>Support & Maintenance</span><span class="dot">◆</span>
+    </div>
+</div>
+
+<!-- Services Section -->
+<section id="services" class="section services-section">
+    <div class="container">
+        <div class="section-header reveal-up">
+            <span class="section-tag">Expertise & Innovation</span>
+            <h2 class="section-title">What We <span class="text-blue">Offer</span></h2>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card reveal-up" style="--delay:0.1s">
+                <div class="sc-top">
+                    <div class="sc-icon"><i class="fas fa-globe"></i></div>
+                    <div class="sc-num">01</div>
+                </div>
+                <h4>Website Development</h4>
+                <p>Modern, highly responsive, blazing-fast web architectures custom-engineered to handle scalable traffic securely.</p>
+                <div class="sc-tags"><span>React</span><span>Next.js</span><span>Node</span></div>
+                <a href="#contact" class="sc-arrow"><i class="fas fa-arrow-up-right"></i></a>
+            </div>
+
+            <div class="service-card reveal-up" style="--delay:0.2s">
+                <div class="sc-top">
+                    <div class="sc-icon"><i class="fas fa-bezier-curve"></i></div>
+                    <div class="sc-num">02</div>
+                </div>
+                <h4>UI/UX Design</h4>
+                <p>User-centric design flows layered with psychological patterns for seamless, intuitive consumer experiences.</p>
+                <div class="sc-tags"><span>Figma</span><span>Prototyping</span><span>Research</span></div>
+                <a href="#contact" class="sc-arrow"><i class="fas fa-arrow-up-right"></i></a>
+            </div>
+
+            <div class="service-card reveal-up" style="--delay:0.3s">
+                <div class="sc-top">
+                    <div class="sc-icon"><i class="fas fa-palette"></i></div>
+                    <div class="sc-num">03</div>
+                </div>
+                <h4>Graphic Design</h4>
+                <p>Impactful brand systems, corporate vectors, and asset frameworks constructed natively for modern business.</p>
+                <div class="sc-tags"><span>Branding</span><span>Illustration</span><span>Print</span></div>
+                <a href="#contact" class="sc-arrow"><i class="fas fa-arrow-up-right"></i></a>
+            </div>
+
+            <div class="service-card reveal-up" style="--delay:0.1s">
+                <div class="sc-top">
+                    <div class="sc-icon"><i class="fas fa-brain"></i></div>
+                    <div class="sc-num">04</div>
+                </div>
+                <h4>AI Services</h4>
+                <p>Automated workflow configurations and intelligent data models tailored to maximize structural speed and efficiency.</p>
+                <div class="sc-tags"><span>ML Models</span><span>Automation</span><span>LLM</span></div>
+                <a href="#contact" class="sc-arrow"><i class="fas fa-arrow-up-right"></i></a>
+            </div>
+
+            <div class="service-card reveal-up" style="--delay:0.2s">
+                <div class="sc-top">
+                    <div class="sc-icon"><i class="fas fa-cloud"></i></div>
+                    <div class="sc-num">05</div>
+                </div>
+                <h4>Cloud & Email Setup</h4>
+                <p>Resilient production network setups and secure email systems deployed to manage absolute operations uptime.</p>
+                <div class="sc-tags"><span>AWS</span><span>GCP</span><span>DevOps</span></div>
+                <a href="#contact" class="sc-arrow"><i class="fas fa-arrow-up-right"></i></a>
+            </div>
+
+            <div class="service-card reveal-up" style="--delay:0.3s">
+                <div class="sc-top">
+                    <div class="sc-icon"><i class="fas fa-tools"></i></div>
+                    <div class="sc-num">06</div>
+                </div>
+                <h4>Support & Maintenance</h4>
+                <p>Continuous monitoring, quick security updates, and active network checks to safely bypass systemic downtime.</p>
+                <div class="sc-tags"><span>24/7 Support</span><span>Security</span><span>Updates</span></div>
+                <a href="#contact" class="sc-arrow"><i class="fas fa-arrow-up-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="section projects-section">
+    <div class="wrap">
+        <div class="section-header reveal-up">
+            <span class="section-tag">Our Work</span>
+            <h2 class="section-title">Latest <span class="text-blue">Ventures</span></h2>
+            <div class="section-line"></div>
+        </div>
         
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    <li class="nav-item ms-lg-2">
-                        <a class="btn btn-brand" href="#contact">Let's Talk</a>
-                    </li>
-                </ul>
+        <div class="tab-bar">
+            <button class="tab-btn active" onclick="switchTab('uiux',this)">UI / UX Design</button>
+            <button class="tab-btn" onclick="switchTab('fullstack',this)">Full Stack</button>
+        </div>
+
+        <div class="tab-panel active" id="tab-uiux">
+            <div class="uiux-grid">
+                <a class="uiux-card" href="https://www.figma.com/proto/cMAxUpN7cnODnOU1dPtxar/project-1?node-id=3934-1164&viewport=-8865%2C-23706%2C0.24&t=kEBsbhOsoxkSxMYa-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=501%3A336&page-id=20%3A62" target="_blank">
+                    <div class="uiux-thumb thumb-cake" style="padding:0;overflow:hidden;">
+                        <img src="bike.png" alt="BakeBliss Cake Website" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" />
+                    </div>
+                    <div class="uiux-body">
+                        <span class="uiux-tag">Mobile UI</span>
+                        <p class="uiux-name">Bikezy</p>
+                        <p class="uiux-desc">This project focuses on designing a bike and scooter–only ride-booking app to improve the experience for daily commuters. Existing ride-hailing apps combine multiple services, creating cluttered interfaces and slower bookings. By limiting the service to bikes and scooters, this app aims to deliver a simple, fast, and user-friendly booking experience with reduced cognitive load and improved usability.</p>
+                        <span class="uiux-link">View on Figma <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+                    </div>
+                </a>
+
+                <a class="uiux-card" href="https://www.figma.com/proto/cMAxUpN7cnODnOU1dPtxar/project-1?node-id=317-68&viewport=-1441%2C-8482%2C0.11&t=7f7Hr7N6NIL4G37x-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=501%3A336&page-id=20%3A62" target="_blank">
+                    <div class="uiux-thumb thumb-cake" style="padding:0;overflow:hidden;">
+                        <img src="gym.png" alt="BakeBliss Cake Website" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" />
+                    </div>
+                    <div class="uiux-body">
+                        <span class="uiux-tag">Web UI</span>
+                        <p class="uiux-name">InifityLift</p>
+                        <p class="uiux-desc">This project is a fitness-focused Gym Website UI/UX design created to motivate users and mtake gym information easy to access. The site highlights workouts, programs, trainers, and membership plans with a bold, energetic layout that reflects a modern fitness brand.</p>
+                        <span class="uiux-link">View on Figma <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+                    </div>
+                </a>
+
+                <a class="uiux-card" href="https://www.figma.com/proto/xhRtfmqv59ozhh4oQNnwPs/Final-Project?page-id=590%3A1134&node-id=631-4833&viewport=-933%2C185%2C0.11&t=MSfZoDxWCB6pjfkj-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=631%3A4833" target="_blank">
+                    <div class="uiux-thumb thumb-cake" style="padding:0;overflow:hidden;">
+                        <img src="med.png" alt="BakeBliss Cake Website" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" />
+                    </div>
+                    <div class="uiux-body">
+                        <span class="uiux-tag">Mobile UI</span>
+                        <p class="uiux-name">MediTime</p>
+                        <p class="uiux-desc">Designed a visually appealing cake website with a cute and user-friendly interface, focused on creating a smooth and enjoyable browsing experience. Developed wireframes and high-fidelity UI designs in Figma, ensuring clear navigation, visual consistency, and an engaging layout for users.</p>
+                        <span class="uiux-link">View on Figma <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+                    </div>
+                </a>
+                <a class="uiux-card" href="https://www.figma.com/proto/jnVQzt1EPwsHtlu8uG5FsT/cake-website?page-id=0%3A1&node-id=1060-440&viewport=4712%2C429%2C0.07&t=Ur7RUJ8ALWVUCIHR-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=655%3A1332" target="_blank">
+                    <div class="uiux-thumb thumb-cake" style="padding:0;overflow:hidden;">
+                        <img src="cake.png" alt="BakeBliss Cake Website" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" />
+                    </div>
+                    <div class="uiux-body">
+                        <span class="uiux-tag">Web UI</span>
+                        <p class="uiux-name">BakeBliss – Cake Website</p>
+                        <p class="uiux-desc">Designed a visually appealing cake website with a warm, elegant interface focused on a smooth browsing experience. Built wireframes and high-fidelity UI in Figma with clear navigation and visual consistency.</p>
+                        <span class="uiux-link">View on Figma <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+                    </div>
+                </a>
             </div>
         </div>
-    </nav>
 
-    <section id="home" class="hero-section d-flex align-items-center">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6 animate__animated animate__fadeInLeft">
-                    <span class="section-tag d-block mb-3">Build • Design • Develop • Elevate</span>
-                    <h1 class="display-4 fw-bold mb-3 text-white">We Transform <span class="text-gradient">Ideas</span> Into<span class="text-gradient"> Digital</span> Realities</h1>
-                    <p class="fs-5 text-high-contrast mb-4">Crafting modern digital platforms through precision UI/UX design, robust engineering pipelines, and continuous ecosystem innovation.</p>
-                    <div class="d-flex gap-3">
-                        <a href="#contact" class="btn btn-brand btn-lg px-4">Start a Project</a>
-                        <a href="#services" class="btn btn-outline-brand btn-lg px-4">Explore Services <i class="fas fa-arrow-right ms-2 fs-6"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 animate__animated animate__fadeInRight">
-                    <div class="text-center">
-                        <img src="frame.png" alt="CodezaTech Mockup" class="hero-image img-fluid">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="py-5 reveal">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <span class="section-tag">Expertise & Innovation</span>
-                <h2 class="display-5 fw-bold mt-2 text-white">What We Offer</h2>
-                <div class="section-divider mx-auto mt-3"></div>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-globe"></i></div>
-                        <h4 class="fw-bold mb-3 text-white">Website Development</h4>
-                        <p class="text-high-contrast">Modern, highly responsive, and blazing-fast web architectures custom-engineered to handle scalable traffic spikes securely.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-bezier-curve"></i></div>
-                        <h4 class="fw-bold mb-3 text-white">UI/UX Design</h4>
-                        <p class="text-high-contrast">User-centric conceptual flows layered intentionally with structural psychological patterns for clear consumer experiences.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-palette"></i></div>
-                        <h4 class="fw-bold mb-3 text-white">Graphic Design</h4>
-                        <p class="text-high-contrast">Impactful asset designs, brand layout frameworks, and corporate vectors constructed natively to define modern business models.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-brain"></i></div>
-                        <h4 class="fw-bold mb-3 text-white">AI Services</h4>
-                        <p class="text-high-contrast">Automated workflow configurations and intelligent data models tailored purposefully to maximize structural speed vectors.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-cloud"></i></div>
-                        <h4 class="fw-bold mb-3 text-white">Cloud & Email Setup</h4>
-                        <p class="text-high-contrast">Resilient production network setups and secure email systems deployed systematically to manage absolute operations uptime.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-tools"></i></div>
-                        <h4 class="fw-bold mb-3 text-white">Support & Maintenance</h4>
-                        <p class="text-high-contrast">Continuous code monitoring practices, quick security updates, and active network checking to safely bypass systemic downtime cycles.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="py-5 bg-black bg-opacity-40 reveal">
-        <div class="container py-5">
-            <div class="row align-items-center mb-5">
-                <div class="col-lg-5">
-                    <span class="section-tag">Our Projects</span>
-                    <h2 class="display-5 fw-bold mt-2 text-white">Latest Ventures</h2>
-                </div>
-                <div class="col-lg-7">
-                    <p class="fs-5 text-high-contrast mb-0">Explore our enterprise technology pipelines and global systems architectures where complex logic merges safely into structural market operations.</p>
-                </div>
-            </div>
-
-            <div class="project-card p-4 p-lg-5 mb-4">
-                <div class="row align-items-center g-5">
-                    <div class="col-lg-6">
-                        <div class="project-img-wrapper rounded flex-column p-5 text-center">
-                            <div class="project-overlay-glow"></div>
-                            <i class="fa-solid fa-dumbbell fa-4x text-white mb-3 animate__animated animate__pulse animate__infinite"></i>
-                            <h3 class="fw-bold text-white tracking-wide">PUSH BEYOND YOUR LIMITS</h3>
-                            <p class="project-subtitle small fw-semibold tracking-wider">TRAIN HARDER • FEEL STRONGER</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <span class="badge px-3 py-2 mb-3 fs-6 project-badge">UI/UX & Web Development</span>
-                        <h3 class="fw-bold text-white display-6 mb-3">Apex Fitness Digital Ecosystem</h3>
-                        <p class="text-high-contrast fs-5 mb-4">A complete platform infrastructure running custom customer dashboards, rapid session-booking operations, and modern data reporting tools natively across all hardware screens.</p>
-                        <a href="#" class="btn btn-outline-brand btn-lg">View Live Project <i class="fas fa-external-link-alt ms-2 fs-6"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-5 reveal">
-        <div class="container py-5">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <span class="section-tag">Who We Are</span>
-                    <h2 class="display-5 fw-bold mt-2 text-white">We Power the Evolving Digital World</h2>
-                    <p class="fs-5 text-high-contrast mt-4">At CodezaTech, our services target the highest levels of digital asset architecture. Every system we launch matches absolute security needs with visual fluid dynamics smoothly.</p>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row g-4">
-                        <div class="col-6">
-                            <div class="stat-box p-5 bg-dark bg-opacity-40 rounded-4 text-center shadow-lg">
-                                <h2 class="fw-bold display-4 stat-number">99%</h2>
-                                <p class="text-white fw-medium mb-0 mt-2">Client Satisfaction</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="stat-box p-5 bg-dark bg-opacity-40 rounded-4 text-center shadow-lg">
-                                <h2 class="fw-bold display-4 stat-number">150+</h2>
-                                <p class="text-white fw-medium mb-0 mt-2">Projects Delivered</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <section id="contact" class="py-5 bg-black bg-opacity-40 reveal">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <span class="section-tag">Get In Touch</span>
-                <h2 class="display-5 fw-bold mt-2 text-white">Let's Create Something Great</h2>
-            </div>
-            
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="card contact-card bg-dark bg-opacity-30 p-4 p-lg-5 rounded-4 shadow-2xl">
-                        <form id="contactForm">
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <label class="form-label fw-semibold text-white">Your Name</label>
-                                    <input type="text" class="form-control text-white py-3" placeholder="John Doe" required style="box-shadow: none;">
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label fw-semibold text-white">Your Email</label>
-                                    <input type="email" class="form-control text-white py-3" placeholder="john@example.com" required style="box-shadow: none;">
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label fw-semibold text-white">Subject</label>
-                                    <input type="text" class="form-control text-white py-3" placeholder="Project Consultation" required style="box-shadow: none;">
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label fw-semibold text-white">Your Message</label>
-                                    <textarea class="form-control text-white p-3" rows="5" placeholder="Tell us about your project goals..." required style="box-shadow: none;"></textarea>
-                                </div>
-                                <div class="col-12 text-center mt-4">
-                                    <button type="submit" class="btn btn-brand btn-lg w-100 py-3">Send Message Idea</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer py-5 text-center text-muted">
-        <div class="container">
-            <p class="mb-2 text-high-contrast">&copy; 2026 CodezaTech. All Rights Reserved.</p>
-            <p class="mb-0 fw-semibold footer-tagline">Code. Innovate. Elevate.</p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        function revealElementsOnScroll() {
-            const reveals = document.querySelectorAll('.reveal');
-            reveals.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 80; 
+        <div class="tab-panel" id="tab-fullstack">
+            <div class="fs-grid">
                 
-                if (elementTop < windowHeight - elementVisible) {
-                    element.classList.add('active');
-                }
-            });
-        }
+                <div class="fs-card">
+                    <div class="fs-slider" data-slider>
+                        <div class="fs-slides">
+                            <div class="fs-slide-container">
+                                <img class="fs-slide" src="home.png" alt="Footwear Store Home Page" />
+                                <div class="fs-slide-caption">Home Page</div>
+                            </div>
+                            <div class="fs-slide-container">
+                                <img class="fs-slide" src="list.png" alt="Product Listing" />
+                                <div class="fs-slide-caption">Product Listing</div>
+                            </div>
+                            <div class="fs-slide-container">
+                                <img class="fs-slide" src="cart.png" alt="Cart & Checkout" />
+                                <div class="fs-slide-caption">Cart & Checkout</div>
+                            </div>
+                            <div class="fs-slide-container">
+                                <img class="fs-slide" src="admin.png" alt="Order Confirmation" />
+                                <div class="fs-slide-caption">Order Confirmation</div>
+                            </div>
+                        </div>
+                        <button class="fs-prev" aria-label="Previous">
+                            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+                        </button>
+                        <button class="fs-next" aria-label="Next">
+                            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                        </button>
+                        <div class="fs-dots"></div>
+                    </div>
+                    
+                    <div class="fs-body">
+                        <span class="fs-tag">Full Stack</span>
+                        <p class="fs-name">Footwear Store</p>
+                        <p class="fs-desc">A complete e-commerce platform for footwear — product listings, cart, checkout, and order management.</p>
+                        <div class="fs-pills">
+                            <span class="fs-pill">Php</span>
+                            <span class="fs-pill">Html</span>
+                            <span class="fs-pill">Javascript</span>
+                            <span class="fs-pill">Css</span>
+                            <span class="fs-pill">MYsql</span>
+                        </div>
+                       
+                    </div>
+                </div>
 
-        window.addEventListener('scroll', revealElementsOnScroll);
-        window.addEventListener('load', revealElementsOnScroll);
+                <div class="fs-card">
+                    <div class="fs-slider" data-slider>
+                        <div class="fs-slides">
+                            <div class="fs-slide-container">
+                                <img class="fs-slide" src="dhome.png" alt="Calendar View" />
+                                <div class="fs-slide-caption">Calendar View</div>
+                            </div>
+                            <div class="fs-slide-container">
+                                <img class="fs-slide" src="dlogin.png" alt="Provider Profile" />
+                                <div class="fs-slide-caption">Provider Profile</div>
+                            </div>
+                            <div class="fs-slide-container">
+                                <img class="fs-slide" src="dlogin3.png" alt="Notifications" />
+                                <div class="fs-slide-caption">Notifications View</div>
+                            </div>
+                            <div class="fs-slide-container">
+                                <img class="fs-slide" src="dlogin2.png" alt="System Panel" />
+                                <div class="fs-slide-caption">Admin System Panel</div>
+                            </div>
+                        </div>
+                        <button class="fs-prev" aria-label="Previous">
+                            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+                        </button>
+                        <button class="fs-next" aria-label="Next">
+                            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                        </button>
+                        <div class="fs-dots"></div>
+                    </div>
+                    
+                    <div class="fs-body">
+                        <span class="fs-tag">Full Stack</span>
+                        <p class="fs-name">Appointment Booking</p>
+                        <p class="fs-desc">Smart scheduling system with calendar management, notifications, and multi-service provider support.</p>
+                        <div class="fs-pills">
+                            <span class="fs-pill">Python</span>
+                            <span class="fs-pill">Django</span>
+                            <span class="fs-pill">Mysql</span>
+                            <span class="fs-pill">Html,css,js</span>
+                        </div>
+                        </div>
+                    </div>
+                </div>
 
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for reaching out to CodezaTech! We will get back to you shortly.');
-            this.reset();
-        });
-    </script>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About / Process Section -->
+<section id="about" class="section about-section">
+    <div class="container">
+        <div class="section-header reveal-up">
+            <span class="section-tag">Who We Are</span>
+            <h2 class="section-title">We Power the Evolving <span class="text-blue">Digital World</span></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="about-grid">
+            <div class="about-left reveal-up">
+                <p class="about-desc">At CodezaTech, our services target the highest levels of digital asset architecture. Every system we launch matches absolute security needs with visual fluid dynamics smoothly.</p>
+                <p class="about-desc">We don't just build websites — we engineer digital ecosystems that scale, perform, and convert. From concept to deployment, our team is your dedicated innovation partner.</p>
+                <p class="about-desc">We specialize in crafting intuitive UI/UX experiences and robust web solutions that don't just look great — they meet industry compliance standards at every layer.</p>
+                <p class="about-desc">Our cross-functional team blends design precision with development expertise, delivering products that are accessible, regulation-ready, and built for the modern web.</p>
+                <div class="about-badges">
+                    <span><i class="fas fa-shield-alt"></i> Secure by Default</span>
+                    <span><i class="fas fa-bolt"></i> Performance First</span>
+                    <span><i class="fas fa-infinity"></i> Scalable Architecture</span>
+                    <span><i class="fas fa-headset"></i> 24/7 Support</span>
+                </div>
+            </div>
+            <div class="about-right reveal-right">
+                <div class="process-steps">
+                    <div class="ps-step">
+                        <div class="ps-num">01</div>
+                        <div class="ps-content">
+                            <h5>Discovery & Strategy</h5>
+                            <p>We deep-dive into your goals, audience, and competition to craft a laser-focused digital strategy.</p>
+                        </div>
+                    </div>
+                    <div class="ps-step">
+                        <div class="ps-num">02</div>
+                        <div class="ps-content">
+                            <h5>Design & Prototype</h5>
+                            <p>Pixel-perfect wireframes and interactive prototypes that align brand identity with user psychology.</p>
+                        </div>
+                    </div>
+                    <div class="ps-step">
+                        <div class="ps-num">03</div>
+                        <div class="ps-content">
+                            <h5>Build & Engineer</h5>
+                            <p>Clean, modular code built for speed, security, and seamless scalability from day one.</p>
+                        </div>
+                    </div>
+                    <div class="ps-step">
+                        <div class="ps-num">04</div>
+                        <div class="ps-content">
+                            <h5>Launch & Grow</h5>
+                            <p>Monitored deployment with ongoing optimization to ensure your platform evolves with your business.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="section contact-section">
+  <div class="container">
+     <div class="section-header reveal-up">
+            <span class="section-tag">Get In Touch</span>
+            <h2 class="section-title">Let's Create<br>Something <span class="text-blue">Great</span></h2>
+            <div class="section-line"></div>
+        </div>
+    <div class="contact-wrapper">
+
+      <!-- LEFT -->
+      <div class="contact-left reveal-up">
+        <p class="contact-desc">Whether you're starting from scratch or scaling an existing product, we're here to turn your vision into a fully compliant, high-performing digital reality.</p>
+        <p class="contact-desc">Have a project in mind? We'd love to hear about it. Drop us a message and we'll get back to you within 24 hours.</p>  
+        <div class="contact-info">
+          <div class="ci-item">
+            <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <p class="ci-label">Email Us</p>
+              <p class="ci-val">support@codezatech.com</p>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <p class="ci-label">Location</p>
+              <p class="ci-val">Global · Remote First</p>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon"><i class="fas fa-bolt"></i></div>
+            <div>
+              <p class="ci-label">Response Time</p>
+              <p class="ci-val">Within 24 Hours</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT — Web3Forms -->
+      <div class="contact-form reveal-up">
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="c8d72c4d-73c9-4546-a52f-827e76b0b4a9">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="What's this about?">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            Send Message
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+
+          <div class="form-success" id="formSuccess">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            Message sent! We'll get back to you within 24 hours.
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a class="nav-brand" href="#">
+            <img src="logs.png" alt="CodezaTech" onerror="this.style.display='none'">
+          
+        </a>
+                <p>Transforming ideas into extraordinary digital experiences.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CodezaTech. All Rights Reserved.</p>
+            <p class="footer-tagline">Code. Innovate. Elevate.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
