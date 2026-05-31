@@ -1525,3 +1525,11 @@ body:has(button:hover) .cursor-glow {
     .container { padding: 0 1.2rem; }
     .contact-form { padding: 1.5rem; }
 }
+.form-success{
+    display: none;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    color: #00ff88;
+    font-weight: 600;
+}
