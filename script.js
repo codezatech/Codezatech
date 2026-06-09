@@ -288,6 +288,26 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    const navLinkItems = document.querySelectorAll('.nav-link, .btn-nav');
+
+    navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open');
+    });
+
+    navLinkItems.forEach(link => {
+        link.addEventListener('click', () => {
+            navToggle.classList.remove('open');
+            navLinks.classList.remove('open');
+            document.body.style.overflow = 'initial';
+        });
+    });
+});
+
 const form = document.getElementById("contactForm");
 const successMessage = document.getElementById("formSuccess");
 
