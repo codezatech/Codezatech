@@ -167,7 +167,7 @@ body:has(button:hover) .cursor-glow {
     text-decoration: none;
 }
 
-.nav-brand img { max-height: 50px; object-fit: contain; }
+.nav-brand img { max-height: 60px; object-fit: contain; }
 
 .brand-text {
     font-family: 'Roboto', sans-serif;
@@ -1460,6 +1460,7 @@ body:has(button:hover) .cursor-glow {
     display: flex;
     gap: 1.5rem;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .footer-links a {
@@ -1493,6 +1494,32 @@ body:has(button:hover) .cursor-glow {
     letter-spacing: 2px;
     font-size: 0.8rem !important;
 }
+
+.footer-socials {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.footer-socials a {
+    color: var(--white-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    border: 1px solid rgba(14,165,233,0.15);
+    transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: var(--blue-200);
+    border-color: var(--blue-200);
+    background: rgba(14,165,233,0.08);
+}
+
+
 
 /* ─── RESPONSIVE ─────────────────────────────────────────── */
 @media (max-width: 1024px) {
