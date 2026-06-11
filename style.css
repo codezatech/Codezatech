@@ -1434,6 +1434,7 @@ body:has(button:hover) .cursor-glow {
 }
 
 /* ─── FOOTER ─────────────────────────────────────────────── */
+/* ─── FOOTER ─────────────────────────────────────────────── */
 .footer {
     border-top: 1px solid rgba(14,165,233,0.1);
     padding: 3rem 0;
@@ -1518,7 +1519,6 @@ body:has(button:hover) .cursor-glow {
     border-color: var(--blue-200);
     background: rgba(14,165,233,0.08);
 }
-
 
 
 /* ─── RESPONSIVE ─────────────────────────────────────────── */
